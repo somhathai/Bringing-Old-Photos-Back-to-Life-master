@@ -129,13 +129,13 @@ def main(config):
         P = P.data.cpu()
 
         tv.utils.save_image(
-            (P >= 0.5).float(),
-            os.path.join(output_dir, image_name[:-5] + ".png",),
+            (P >= 0.4).float(),
+            os.path.join(output_dir, image_name[:-4] + ".png",),
             nrow=1,
             padding=0,
             normalize=True,
         )
-        transformed_image_PIL.save(os.path.join(input_dir, image_name[:-5] + ".png"))
+        transformed_image_PIL.save(os.path.join(input_dir, image_name[:-4] + ".png"))
         # single_mask=np.array((P>=0.4).float())[0,0,:,:]
         # RGB_mask=np.stack([single_mask,single_mask,single_mask],axis=2)
         # blend_output=blend_mask(transformed_image_PIL,RGB_mask)
