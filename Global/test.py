@@ -162,7 +162,7 @@ if __name__ == "__main__":
             continue
 
         if input_name.endswith(".jpg"):
-            input_name = input_name[:-5] + ".png"
+            input_name = input_name[:-4] + ".png"
 
         image_grid = vutils.save_image(
             (input + 1.0) / 2.0,
